@@ -32,7 +32,7 @@ class Reservation(tk.Frame):
         tk.Entry(self, textvariable=phone).pack()
 # Botones
         tk.Button(self, text="Pagar").pack(
-                    side=tk.LEFT, fill=tk.BOTH, expand=True)
+                    side=tk.LEFT, expand=True)
         tk.Button(self, text="Abono").pack(
-                    side=tk.LEFT, fill=tk.BOTH, expand=True)
+                    side=tk.LEFT, expand=True)
 #aki
