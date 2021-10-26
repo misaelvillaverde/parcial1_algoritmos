@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter.constants import TRUE
 
 
 class Reservation(tk.Frame):
@@ -13,26 +14,26 @@ class Reservation(tk.Frame):
         amount = tk.StringVar
         phone = tk.StringVar
 # Texto y Barra
-        tk.Label(self, text="Genero:").pack()
+        tk.Label(self, text="Genero:",pady=20).pack()
         tk.Entry(self, textvariable=genre).pack()
 
-        tk.Label(self, text="Cedula:").pack()
+        tk.Label(self, text="Cedula:",pady=20).pack()
         tk.Entry(self, textvariable=userId).pack()
 
-        tk.Label(self, text="Nacionalidad:").pack()
+        tk.Label(self, text="Nacionalidad:",pady=20).pack()
         tk.Entry(self, textvariable=nationality).pack()
 
-        tk.Label(self, text="Nombre:").pack()
+        tk.Label(self, text="Nombre:",pady=20).pack()
         tk.Entry(self, textvariable=name).pack()
 
-        tk.Label(self, text="Cantidad:").pack()
+        tk.Label(self, text="Cantidad:",pady=20).pack()
         tk.Entry(self, textvariable=amount).pack()
 
-        tk.Label(self, text="Numero celular:").pack()
+        tk.Label(self, text="Numero celular:",pady=20).pack()
         tk.Entry(self, textvariable=phone).pack()
 # Botones
         tk.Button(self, text="Pagar").pack(
-                    side=tk.LEFT, fill=tk.BOTH, expand=True)
+                    side=tk.LEFT,expand=TRUE)
         tk.Button(self, text="Abono").pack(
-                    side=tk.LEFT, fill=tk.BOTH, expand=True)
+                    side=tk.LEFT,expand=TRUE)
 #aki
