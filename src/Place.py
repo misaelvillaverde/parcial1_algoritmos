@@ -1,4 +1,3 @@
-
 import tkinter as tk
 from tkinter import font
 from functools import partial
@@ -13,10 +12,11 @@ class Place(tk.Frame):
 
         tk.Label(self, text=place["name"], font=font.Font(size=20)).pack()
 
+        #image
         img = tk.PhotoImage(file=place["image"]).zoom(2, 2)
-        province_image = tk.Label(self, image=img)
-        province_image.image = img
-        province_image.pack()
+        place_image = tk.Label(self, image=img)
+        place_image.image = img
+        place_image.pack()
 
         # Conexion con la reservacion
         tk.Button(self, text="Reservar",
