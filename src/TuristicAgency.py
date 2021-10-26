@@ -39,4 +39,4 @@ class TuristicAgency(tk.Frame):
         frame.tkraise()
 
     def getProvinces(self):
-        return requests.get(f"{LOCAL}/provinces").json()
+        return requests.get(f"{URL}/provinces").json()
