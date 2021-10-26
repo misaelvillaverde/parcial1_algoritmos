@@ -25,7 +25,9 @@ class Province(tk.Frame):
         tk.Label(frame_province, text=province["name"], font=font.Font(size=60), pady=20).pack()
 
         # image
-        img = tk.PhotoImage(file=province["image"]).zoom(1, 1)
+        a=2
+    
+        img = tk.PhotoImage(file=province["image"]).zoom(a,a)
         province_image = tk.Label(frame_province, image=img)
         province_image.image = img
         province_image.pack()
