@@ -3,6 +3,18 @@ import tkinter as tk
 from tkinter import font
 from functools import partial
 
+"""
+
+interface TuristicPlace {
+  name: string;
+  image?: string;
+  description: string;
+  cost: number;
+  includes: string[];
+}
+
+"""
+
 
 class Place(tk.Frame):
     def __init__(self, parent, controller, place):
