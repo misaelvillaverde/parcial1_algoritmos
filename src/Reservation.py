@@ -31,5 +31,7 @@ class Reservation(tk.Frame):
         tk.Label(self, text="Numero celular:").pack()
         tk.Entry(self, textvariable=phone).pack()
 # Botones
-        tk.Button(self, text="Pagar").pack(side="left")
-        tk.Button(self, text="Abono").pack(side="right")
+        tk.Button(self, text="Pagar").pack(
+                    side=tk.LEFT, fill=tk.BOTH, expand=True)
+        tk.Button(self, text="Abono").pack(
+                    side=tk.LEFT, fill=tk.BOTH, expand=True)
