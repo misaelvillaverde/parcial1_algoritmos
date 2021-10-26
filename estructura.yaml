@@ -1,0 +1,81 @@
+# Este archivo solo es para visualizar la estructura del proyecto, no sigue el estandar de YAML
+presentacion:
+  - siguiente(boton) -> pp(sin provincia)
+
+pantalla principal(sin provincia):
+  - Titulo de la agencia
+  - Descripcion de agencia
+  - Tabs:
+  	- Provincias -> pp(con provincia)
+  	- Comarcas -> pp(con provincia)
+
+pantalla principal(con provincia):
+  - Titulo de la agencia
+  - Destino:
+  	- Nombre
+  	- Imagen
+  	- Descripcion
+  - Actividades:
+  	- lista
+  	- Titulo de actividad seleccionada
+  	- Imagen de actividad
+  	- Descripcion
+  	- Incluye
+  	- Precio por persona
+  	- Reservar(boton) -> reserva(actividad)
+  - Regresar a pantalla sin provincia(boton) -> pp(sin provincia)
+  - Tabs:
+  	- Provincias -> pp(con provincia)
+  	- Comarcas -> pp(con provincia)
+
+reserva(actividad):
+- Titulo de la actividad
+- datos del cliente:
+	- nombre
+	- edad
+	- nacionalidad
+	- cantidad de personas
+	- sexo
+	- abono
+		- habilitar
+	- cedula
+	- telefono
+- datos del tour:
+	- -> datos del cliente
+	- precio del recorrido
+	- subtotal
+	- abono
+	- descuento
+	- total adeudado
+- cantidad de dinero
+- Pagar(boton, deshabilitado hasta que esten todos los datos) -> pago(cliente, actividad, cantidad de dinero)
+- Volver(boton) -> pp(con provincia)
+
+pago:
+  - Nombre del cliente
+  - Identificacion personal
+  - Nacionalidad
+  - Sexo
+  - Subtotal
+  - Total final
+  - Agregar actividad(boton) -> pp(con provincia)
+
+abono::pago:
+  - Descuento
+  - Abono
+  - Total adeudado
+  - Volver(boton) -> pp(sin provincia)
+
+factura(Debe haber terminado de pagar):
+  - Nombre del cliente
+  - Identificacion personal
+  - Nacionalidad
+  - lista de actividades
+    - Nombre de la actividad
+    - Provincia
+    - Cantidad de personas
+    - Precio por persona
+    - Precio total
+  - Sexo
+  - Total acumulado
+  - Volver(boton) -> pp(sin provincia)

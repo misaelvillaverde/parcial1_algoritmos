@@ -1,0 +1,116 @@
+{
+  "provincias": [
+    {
+      "id": 1,
+      "nombre": "Panama",
+      "imagen": "",
+      "comarca": false
+    },
+    {
+      "id": 2,
+      "nombre": "Chiriqui",
+      "imagen": "",
+      "comarca": false
+    },
+    {
+      "id": 3,
+      "nombre": "Cocle",
+      "imagen": "",
+      "comarca": false
+    },
+    {
+      "id": 4,
+      "nombre": "Colón",
+      "imagen": "",
+      "comarca": false
+    },
+    {
+      "id": 5,
+      "nombre": "Darién",
+      "imagen": "",
+      "comarca": false
+    },
+    {
+      "id": 6,
+      "nombre": "Herrera",
+      "imagen": "",
+      "comarca": false
+    },
+    {
+      "id": 7,
+      "nombre": "Los Santos",
+      "imagen": "",
+      "comarca": false
+    },
+    {
+      "id": 8,
+      "nombre": "Veraguas",
+      "imagen": "",
+      "comarca": false
+    },
+    {
+      "id": 9,
+      "nombre": "Guna Yala",
+      "imagen": "",
+      "comarca": true
+    },
+    {
+      "id": 10,
+      "nombre": "Ngöbe-Buglé",
+      "imagen": "",
+      "comarca": true
+    },
+    {
+      "id": 11,
+      "nombre": "Embera",
+      "imagen": "",
+      "comarca": true
+    }
+  ],
+  "lugaresTuristicos": [
+    {
+      "id": 1,
+      "nombre": "Catedral de Panama",
+      "descripcion": "La catedral de Panama es una iglesia colonial de la ciudad de Panama, ubicada en la ciudad de Panama, en el departamento de Veraguas, en el país de Panamá. La catedral fue construida en el siglo XVIII, y fue construida por el arquitecto José de San Martín de la Mora. La catedral fue inaugurada en el año 1821, y fue declarada Patrimonio de la Humanidad en el año 1822. La catedral es uno de los monumentos más importantes de la ciudad de Panama, y es considerada una de las más bellas de la América Latina.",
+      "imagen": "catedral.gif",
+      "idProvincia": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Casco Antiguo",
+      "descripcion": "El Casco Antiguo de Panama es una construcción de la ciudad de Panama, ubicada en la ciudad de Panama, en el departamento de Veraguas, en el país de Panamá. El Casco Antiguo fue construido en el siglo XVIII, y fue construido por el arquitecto José de San Martín de la Mora. La catedral fue inaugurada en el año 1821, y fue declarada Patrimonio de la Humanidad en el año 1822. La catedral es uno de los monumentos más importantes de la ciudad de Panama, y es considerada una de las más bellas de la América Latina.",
+      "idProvincia": 1
+    },
+    {
+      "id": 3,
+      "nombre": "Archipiélago de San Blas",
+      "descripcion": "El archipiélago de San Blas de guna yala",
+      "idProvincia": 9
+    }
+  ],
+  "Usuarios": [
+    {
+      "id": 1,
+      "nombre": "Eric",
+      "edad": 3,
+      "sexo": "elicoctero ruso",
+      "presupuesto": 100000,
+      "email": "eric@gmail.com"
+    }
+  ],
+  "Facturas": [
+    {
+      "id": 1,
+      "idUsuario": 1,
+      "idLugarTuristico": 1,
+      "fecha": "2020-01-01",
+      "precio": 100000
+    }
+  ],
+  "Abonos": [
+    {
+      "idFactura": 1,
+      "deuda": 3000
+    }
+  ]
+}
