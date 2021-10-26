@@ -35,3 +35,4 @@ class Reservation(tk.Frame):
                     side=tk.LEFT, fill=tk.BOTH, expand=True)
         tk.Button(self, text="Abono").pack(
                     side=tk.LEFT, fill=tk.BOTH, expand=True)
+#aki
