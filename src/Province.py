@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import font
 from functools import partial
+from tkinter.constants import TOP
 
 
 class Province(tk.Frame):
@@ -21,11 +22,10 @@ class Province(tk.Frame):
         frame_turism.pack(fill=tk.X, expand=True)
 
         # Province name
-        tk.Label(frame_province, text=province["name"], font=(
-            60), pady=20).pack()
+        tk.Label(frame_province, text=province["name"], font=font.Font(size=60), pady=20).pack()
 
         # image
-        img = tk.PhotoImage(file=province["image"]).zoom(2, 2)
+        img = tk.PhotoImage(file=province["image"]).zoom(1, 1)
         province_image = tk.Label(frame_province, image=img)
         province_image.image = img
         province_image.pack()
