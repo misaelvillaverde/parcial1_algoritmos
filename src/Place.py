@@ -27,40 +27,41 @@ class Place(tk.Frame):
 
         tk.Label(self, text=place["name"], font=font.Font(size=20)).pack()
 
-        #image
-        img = tk.PhotoImage(file=place["image"]).zoom(1, 1)
+        # image
+        img = tk.PhotoImage(file=place["image"]).zoom(2, 2).subsample(4, 4)
         place_image = tk.Label(self, image=img, pady=10)
         place_image.image = img
         place_image.pack()
 
-#descripcion
+# descripcion
 
         # Right frame
         frame_place = tk.Frame(
             self, bg='#f0f0f0')
         frame_place.pack(fill=tk.X, expand=True)
         tk.Label(frame_place,
-                text=place["description"], wraplength=500, justify=tk.LEFT).pack()
+                 text=place["description"], wraplength=500, justify=tk.LEFT).pack()
 
-      #Privilegio
-        tk.Label( frame_place,text="Incluye:", wraplength=500, justify=tk.LEFT).pack()
+      # Privilegio
+        tk.Label(frame_place, text="Incluye:",
+                 wraplength=500, justify=tk.LEFT).pack()
         for i in place["includes"]:
-          tk.Label(frame_place,text=i, wraplength=500, justify=tk.LEFT).pack()
+            tk.Label(frame_place, text=i, wraplength=500,
+                     justify=tk.LEFT).pack()
 
-
-      #precio
-        tk.Label( frame_place,text="Costo:", wraplength=500, justify=tk.LEFT).pack()
+      # precio
+        tk.Label(frame_place, text="Costo:",
+                 wraplength=500, justify=tk.LEFT).pack()
         tk.Label(frame_place,
-                text= "$"+f"{place['cost']:.2f}", wraplength=500, justify=tk.LEFT,font=50,foreground="green").pack()
-
-
+                 text="$"+f"{place['cost']:.2f}", wraplength=500, justify=tk.LEFT, font=50, foreground="green").pack()
 
         # Conexion con la reservacion
         tk.Button(self, text="Reservar",
-                  command=lambda: self.show_reservation_window(place)).pack(side=tk.LEFT,expand=True)
+                  command=lambda: self.show_reservation_window(place)).pack(side=tk.LEFT, expand=True, pady=40)
+
         from TuristicAgency import TuristicAgency
         tk.Button(self, text="volver",
-                  command=lambda: controller.show_frame(TuristicAgency)).pack(side=tk.LEFT,expand=TRUE)
+                  command=lambda: controller.show_frame(TuristicAgency)).pack(side=tk.LEFT, expand=True, pady=40)
 
     def show_reservation_window(self, place):
         from Reservation import Reservation
