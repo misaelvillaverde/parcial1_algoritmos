@@ -4,7 +4,7 @@ import tkinter as tk
 class FrameController(tk.Tk):
     def __init__(self):
         tk.Tk.__init__(self)
-        self.title("Agencias de viajes DMLR")
+        self.title("Borokotroko Trips")
         self.geometry("900x600")
 
         container = tk.Frame(self)
@@ -18,7 +18,8 @@ class FrameController(tk.Tk):
 
         from Presentation import Presentation
         from TuristicAgency import TuristicAgency
-        for Frame in (Presentation, TuristicAgency):
+        from Invoice import Invoice
+        for Frame in (Presentation, TuristicAgency, Invoice):
             frame = Frame(container, self)
             frame.grid(row=0, column=0, sticky="nsew")
             self.frames[Frame] = frame

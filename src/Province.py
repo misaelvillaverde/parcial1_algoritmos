@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import font
 from functools import partial
+from tkinter.constants import TOP
 
 
 class Province(tk.Frame):
@@ -21,11 +22,13 @@ class Province(tk.Frame):
         frame_turism.pack(fill=tk.X, expand=True)
 
         # Province name
-        tk.Label(frame_province, text=province["name"], font=(
-            60), pady=20).pack()
+        tk.Label(frame_province, text=province["name"], font=font.Font(
+            size=60), pady=20).pack()
 
         # image
-        img = tk.PhotoImage(file=province["image"]).zoom(2, 2)
+        a = 2
+
+        img = tk.PhotoImage(file=province["image"]).zoom(a, a)
         province_image = tk.Label(frame_province, image=img)
         province_image.image = img
         province_image.pack()
@@ -36,16 +39,16 @@ class Province(tk.Frame):
 
         # turistic places
         if len(province["turisticPlaces"]) <= 0:
-            tk.Label(frame_turism, text="No turistic places").pack()
+            tk.Label(frame_turism, text="No tiene lugares turísticos").pack()
         else:
             for place in province["turisticPlaces"]:
                 turistic_place = partial(self.show_place, place)
                 tk.Button(frame_turism, text=place["name"], command=turistic_place).pack(
-                    side=tk.LEFT, fill=tk.BOTH, expand=True)
+                    side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5)
 
         from TuristicAgency import TuristicAgency
         tk.Button(self, text="volver",
-                  command=lambda: controller.show_frame(TuristicAgency)).pack()
+                  command=lambda: controller.show_frame(TuristicAgency)).pack(pady=15)
 
     def show_place(self, place):
         from Place import Place

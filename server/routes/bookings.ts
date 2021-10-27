@@ -13,18 +13,43 @@ router.get("/", async (_, res) => {
   }
 });
 
+// Get bookings by userId
+router.get("/:id", async (req, res) => {
+  try {
+    const booking = await Booking.find({ userId: req.params.id });
+    res.json(booking);
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
+
 // Post a booking
 router.post("/", async (req, res) => {
-  const { userId, genre, phone, email, nationality, pricePerPerson, peopleQty, currentMoney } = req.body;
-  const booking = new Booking({
+  const {
     userId,
+    name,
     genre,
     phone,
     email,
     nationality,
-    pricePerPerson,
     peopleQty,
-    currentMoney
+    currentDebt,
+    placeName,
+    totalCost,
+    payment,
+  } = req.body;
+  const booking = new Booking({
+    userId,
+    name,
+    genre,
+    phone,
+    email,
+    nationality,
+    peopleQty,
+    currentDebt,
+    placeName,
+    totalCost,
+    payment,
   });
   try {
     const savedBooking = await booking.save();
@@ -34,23 +59,10 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Update a booking
-router.patch("/:id", async(req, res) => {
-  const { userId, genre, phone, email, nationality, pricePerPerson, peopleQty, currentMoney } = req.body;
-  const booking = new Booking({
-    userId,
-    genre,
-    phone,
-    email,
-    nationality,
-    pricePerPerson,
-    peopleQty,
-    currentMoney
-  });
-
+router.delete("/:id", async (req, res) => {
   try {
-    const updatedBooking = await Booking.updateOne({_id: req.params.id}, booking);
-    res.json(updatedBooking);
+    const deletedBooking = await Booking.deleteOne({ _id: req.params.id });
+    res.json(deletedBooking);
   } catch (err) {
     res.json({ message: err });
   }

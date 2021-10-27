@@ -13,14 +13,4 @@ router.get("/", async (_, res) => {
   }
 });
 
-// Get a province by name
-router.get("/:name", async (req, res) => {
-  try {
-    const province = await Province.findOne({ name: req.params.name });
-    res.json(province);
-  } catch (err) {
-    res.json({ message: err });
-  }
-});
-
 export default router;
