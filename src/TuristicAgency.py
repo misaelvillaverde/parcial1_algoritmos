@@ -11,6 +11,35 @@ class TuristicAgency(tk.Frame):
         self.parent = parent
         self.controller = controller
 
+        # Styles
+
+        logo = tk.PhotoImage(
+            file="../assets/portada/Logo Borokotroko.png").subsample(2)
+        label_logo = tk.Label(self, image=logo)
+        label_logo.place(x=105, y=1)
+        label_logo.image = logo
+
+        promo = tk.PhotoImage(file="../assets/portada/promo1.png").subsample(5)
+        label_promo = tk.Label(self, image=promo)
+        label_promo.place(x=20, y=300)
+        label_promo.image = promo
+
+        promo2 = tk.PhotoImage(
+            file="../assets/portada/Promo2.png").subsample(5)
+        label_promo2 = tk.Label(self, image=promo2)
+        label_promo2.place(x=315, y=300)
+        label_promo2.image = promo2
+
+        promo3 = tk.PhotoImage(
+            file="../assets/portada/Promo3.png").subsample(5)
+        label_promo3 = tk.Label(self, image=promo3)
+        label_promo3.place(x=605, y=300)
+        label_promo3.image = promo3
+
+        tk.Label(self, text="Selecciona el lugar en la barra de menu").place(
+            x=350, y=500)
+
+        # Province controller
         menubar = tk.Menu(controller, tearoff=0)
 
         controller.config(menu=menubar)

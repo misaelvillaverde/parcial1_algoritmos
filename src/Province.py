@@ -36,11 +36,11 @@ class Province(tk.Frame):
 
         # turistic places
         if len(province["turisticPlaces"]) <= 0:
-            tk.Label(frame_turism, text="No turistic places").pack()
+            tk.Label(frame_turism, text="No tiene lugares turísticos").pack()
         else:
             for place in province["turisticPlaces"]:
                 turistic_place = partial(self.show_place, place)
-                tk.Button(frame_turism, text=place["name"], command=turistic_place).pack(
+                tk.Button(frame_turism, text=place["name"], command=turistic_place, padx=5).pack(
                     side=tk.LEFT, fill=tk.BOTH, expand=True)
 
         from TuristicAgency import TuristicAgency
