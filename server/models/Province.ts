@@ -4,7 +4,7 @@ interface TuristicPlace {
   name: string;
   image?: string;
   description: string;
-  benefits: string[];
+  includes: string[];
   cost: number;
 }
 
@@ -20,8 +20,8 @@ const TuristicPlaceSchema = new Schema<TuristicPlace>({
   name: { type: String, required: true },
   image: { type: String, default: null },
   description: { type: String, required: true },
-  benefits: { type: [String], required: true },
-  cost: { type: Number, required: true }
+  includes: { type: [String], required: true },
+  cost: { type: Number, required: true },
 });
 
 const ProvinceSchema = new Schema<Province>({
