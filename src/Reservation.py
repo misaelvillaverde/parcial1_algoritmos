@@ -114,6 +114,7 @@ class Reservation(tk.Frame):
         self.debt_label["text"] = f"Deuda restante: ${self.currentDebt:.2f}"
 
         print(f"Total: {self.totalCost}")
+        print(f"Abono: {self.abono.get()}")
         print(f"Total a pagar: {self.deductedCost}")
         print(f"Deuda restante: {self.currentDebt}")
 
@@ -129,7 +130,8 @@ class Reservation(tk.Frame):
             "peopleQty": self.people_qty.get(),
             "currentDebt": self.currentDebt,
             "placeName": self.place_name,
-            "totalCost": self.totalCost
+            "totalCost": self.totalCost,
+            "payment": self.abono.get()
         }
         headers = {"Content-Type": "application/json"}
 

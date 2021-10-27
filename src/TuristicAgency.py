@@ -39,6 +39,10 @@ class TuristicAgency(tk.Frame):
         tk.Label(self, text="Selecciona el lugar en la barra de menu").place(
             x=350, y=500)
 
+        from Invoice import Invoice
+        tk.Button(self, text="Ver Factura", command=lambda: self.controller.show_frame(
+            Invoice)).place(x=700, y=500)
+
         # Province controller
         menubar = tk.Menu(controller, tearoff=0)
 
