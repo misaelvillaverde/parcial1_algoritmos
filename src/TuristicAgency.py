@@ -44,8 +44,8 @@ class TuristicAgency(tk.Frame):
 
         controller.config(menu=menubar)
 
-        province_menu = tk.Menu(menubar)
-        comarca_menu = tk.Menu(menubar)
+        province_menu = tk.Menu(menubar, tearoff=0)
+        comarca_menu = tk.Menu(menubar, tearoff=0)
 
         provinces = self.getProvinces()
         for province in provinces:
